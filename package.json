@@ -7,6 +7,7 @@
     "url": "https://github.com/altnp/vscode-rename-file"
   },
   "icon": "icon.png",
+  "publisher": "NAlt",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.100.0"

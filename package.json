@@ -1,0 +1,72 @@
+{
+  "name": "rename-file",
+  "displayName": "Rename File",
+  "description": "A VS Code extension for renaming the current file based on the word under the current cursor.",
+  "icon": "icon.png",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "editor.renameFile",
+        "title": "Rename File"
+      },
+      {
+        "command": "editor.renameFileSmart",
+        "title": "Rename File Smart"
+      }
+    ],
+    "configuration": {
+      "title": "Rename File",
+      "properties": {
+        "renameFile.languageNamingStyles": {
+          "type": "object",
+          "default": {
+            "*": "camelCase",
+            "csharp": "PascalCase",
+            "xml": "PascalCase"
+          },
+          "description": "Language-specific naming styles. Use '*' for default fallback. Supported values: camelCase, PascalCase, kebab-case, snake_case",
+          "additionalProperties": {
+            "type": "string",
+            "enum": [
+              "camelCase",
+              "PascalCase",
+              "kebab-case",
+              "snake_case"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "change-case": "^5.4.4"
+  }
+}

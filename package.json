@@ -2,6 +2,10 @@
   "name": "rename-file",
   "displayName": "Rename File",
   "description": "A VS Code extension for renaming the current file based on the word under the current cursor.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/altnp/vscode-rename-file"
+  },
   "icon": "icon.png",
   "version": "1.0.0",
   "engines": {
